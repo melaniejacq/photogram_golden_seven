@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Photogram Golden Seven</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="DVC6vCzAPxzvc8uJT4e+QGZWzqTJZ0ThXKD1qRia3g+TNtuHlzUdEcIccZ3vILabdjTpIiPDhTzAjFKxItlybA==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
+    <script src="/assets/application-a1b05e0595224c422d49fd5ef6dd6cb8f9655f710b432bb9b8a6af9638eca09a.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col-md-6">
+
+        <h1>Photo Details</h1>
+
+<p>
+  <%= @image.caption %>
+</p>
+
+<img src="<%= @image.source %>">
+
+<p>
+  <%= @time_ago %> day<%= if @time_ago != 1
+  "s" 
+  end %> ago.
+</p>
+
+<a href="/photos" class="btn btn-default">
+  Go back
+</a>
+<!--changed an_id to the_id below-->
+<a href="/photos/<%=@image.id%>/edit" class="btn btn-default">
+  Edit
+</a>
+
+<a href="/delete_photo/<%=@image.id%>" class="btn btn-default">
+  Delete
+</a>
+
+      </div>
+    </div>
+  </body>
+</html>

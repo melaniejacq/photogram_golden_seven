@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Melanie's Photogram Golden Seven</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hBOpk60gDri9v4j/kDKZl1QhJdXrJNhPsG4wpLlXQb4adcioFtUstZDQMuswlZFMREMCUwGAGZIsQpe8gxTt3Q==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
+    <script src="/assets/application-a1b05e0595224c422d49fd5ef6dd6cb8f9655f710b432bb9b8a6af9638eca09a.js"></script>
+  </head>
+
+<body>
+  <div class="container">
+    <div class="col-md-6">
+      
+      <h1>All Photos</h1>
+
+<a href="/photos/new">
+  Add a new photo!
+</a>
+
+<% @list_of_photos.each do |p| %>
+  
+  <div class="thumbnail">
+    <img src="<%=p.source%>">
+    <div class="caption">         
+      
+      <a href="/photos/<%=p.id%>" class="btn btn-default btn-block">
+        Show details
+      </a>
+      
+      <a href="/photos/<%=p.id%>/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+      
+      <a href="/delete_photo/:<%=p.id%>" class="btn btn-default btn-block">
+        Delete
+      </a>
+      
+    </div>
+  </div>
+  
+  <!--# why this syntax around end?-->
+
+<% end %>
+<!--<p>-->
+<!--  There are now <%= @photo_count %> photos.-->
+<!--</p>-->
+
+
+<!--<p>-->
+<!--  <a href="/photos">-->
+<!--    Click here-->
+<!--  </a>-->
+
+<!--  to go back.-->
+<!--</p>-->
+
+      </div>
+    </div>
+  </body>
+</html>
