@@ -1,4 +1,7 @@
 class PicturesController < ApplicationController
+
+# Homepage
+    
     
 # CREATE
     def new_form
@@ -18,11 +21,9 @@ class PicturesController < ApplicationController
     p.save
     
     @current_count = Photo.count
-
-        render("pic_templates/create_row.html.erb")
-        
-    #see if grading check has preference between this or ...
-    #redirect_to("/photos")
+    
+    redirect_to("/photos")
+    # render("pic_templates/create_row.html.erb")
         
     end
     
@@ -58,25 +59,22 @@ class PicturesController < ApplicationController
         
         @the_id = p.id
         
-        render("pic_templates/update_row.html.erb")
+        # render("pic_templates/update_row.html.erb")
 
         # PROBLEM WITH THIS SYNTAX
-        # redirect_to("/photos/"{@the_id}")
-        
+        redirect_to("/photos")
+        # redirect_to("/photos/#{@the_id")        
     end
 
 # DELETE
 
-    def destroy_row
+def destroy_row
         p = Photo.find(params[:the_id])
         
         p.destroy
         
         @remaining_count = Photo.count
         
-        render("pic_templates/destroy_row.html.erb")
-        
-        # redirect_to("/photos")
+        redirect_to("/photos")
     end
-
 end

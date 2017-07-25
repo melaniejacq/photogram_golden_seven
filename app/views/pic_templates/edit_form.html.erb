@@ -1,8 +1,8 @@
-<h1>Edit Photo  <%=@the_id%> </h1>
+<h1>Edit Photo  <%= @photo.id %> </h1>
 
 <!--form action picks which URL receives input from a form (in the route)-->
 
-<form action="/update_photo/<% @photo.id %>">
+<form action="/update_photo/<%= @photo.id %>">
   <div>
     <label for="source_input">
       Image URL
