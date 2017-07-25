@@ -6,7 +6,7 @@ class PicturesController < ApplicationController
     end
     
     def create_row
-    # create a new row for the photos table
+    # create a new row for the photos table yada yada 
     # fill in its column values by pulling the information the user typed into the form out of the params hash
     # save it
     
