@@ -59,9 +59,9 @@ class PicturesController < ApplicationController
         @the_id = p.id
         
         render("pic_templates/update_row.html.erb")
-        
-        # check if grading prefers:
-        # redirect_to("/photos")
+
+        # PROBLEM WITH THIS SYNTAX
+        # redirect_to("/photos/"{@the_id}")
         
     end
 
@@ -76,7 +76,6 @@ class PicturesController < ApplicationController
         
         render("pic_templates/destroy_row.html.erb")
         
-        # check if grading prefers:
         # redirect_to("/photos")
     end
 
