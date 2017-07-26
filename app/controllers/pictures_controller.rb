@@ -43,6 +43,7 @@ class PicturesController < ApplicationController
     end
 
 # UPDATE
+# UPDATEEEE
     def edit_form
         @photo = Photo.find(params[:the_id])
         
